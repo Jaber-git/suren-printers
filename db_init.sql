@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS surenPrinters;
+USE surenPrinters;
+DROP TABLE IF EXISTS Companies;
+CREATE TABLE Companies(
+    ID int NOT NULL AUTO_INCREMENT,
+    CompanyName VARCHAR(1000) NOT NULL,
+    Address VARCHAR(1000) NOT NULL,
+    PRIMARY KEY(ID)
+);
