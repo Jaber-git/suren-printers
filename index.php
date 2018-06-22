@@ -8,18 +8,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" rel="stylesheet" href="table.css"/>
     <title>Home Page | Suren Printers</title>
 </head>
 <body>
     <ul>
         <li><a href="companies.php">List All Companies</a></li>
-        <li><a href="unpaid.php">Unpaid Bills</a></li>
+        <li><a href="all_bills.php">View Bills</a></li>
+        <li><a href="new_bill.php">New Bill</a></li>
     </ul>
     <br/>
     <p>Choose a company and click submit to view its outstanding bills:</p>
     <form method="post" action="company_unpaid.php" >
         <label>Company&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        <select id="company_name" name="company" >
+        <select id="company_name" name="company_id" >
             <?php
                 try{
                     $connString="mysql:host=".DBHOST.";dbname=".DBNAME;
