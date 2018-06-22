@@ -7,3 +7,21 @@ CREATE TABLE Companies(
     Address VARCHAR(1000) NOT NULL,
     PRIMARY KEY(ID)
 );
+DROP TABLE IF EXISTS Bills;
+CREATE TABLE Bills(
+    ID int NOT NULL AUTO_INCREMENT,
+    CompanyID int NOT NULL,
+    PayStatus int NOT NULL DEFAULT 0,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(CompanyID) REFERENCES Companies(ID)
+);
+DROP TABLE IF EXISTS Items;
+CREATE TABLE Items(
+    ID int NOT NULL AUTO_INCREMENT,
+    BillID int NOT NULL,
+    Name VARCHAR(1000),
+    Quantity int,
+    Price int,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(BillID) REFERENCES Bills(ID)
+);
